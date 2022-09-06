@@ -18,7 +18,8 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
-
+	<script src="js/login.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="container-fluid login-fluid clear-left clear-right">
@@ -56,26 +57,26 @@
 					</div>
 					<!-- login main form -->
 					<div class="col-md-6 col-sm-12 col-12 login-main-right">
-						
+
 						<form class="login-form">
 							<div class="login-main-header">
 								<h3>Đăng Nhập</h3>
 							</div>
 						  <div class="input-div one">
 		           		   <div class="div lg-lable">
-		           		   		<input placeholder="Username" type="text" class="input form-control-lgin">
+		           		   		<input id="username" placeholder="Username" type="text" class="input form-control-lgin">
 		           		   </div>
 		           		</div>
 		           		<div class="input-div pass">
 		           		   <div class="div lg-lable">
-		           		    	<input placeholder="Password" type="password" class="input form-control-lgin">
+		           		    	<input id="password" placeholder="Password" type="password" class="input form-control-lgin">
 		            	   </div>
 		            	</div>
 						  <div class="form-group d-block frm-text">
 						    <a href="choose-role.html" class="fg-login d-inline-block">Bạn chưa có tài khoản? Đăng ký</a>
 						  </div>
 							<br>
-						  <button type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Nhập</button>
+						  <button onclick="login()" class="btn btn-primary float-right btn-login d-block w-100">Đăng Nhập</button>
 						<div class="form-group d-block w-100 mt-5">
 							<div class="text-or text-center">
 								<span>Hoặc</span>
@@ -125,10 +126,7 @@
 	</footer>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.4.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="js/main.js"></script>
 </body>
+<button onclick="login()">abc</button>
 </html>

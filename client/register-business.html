@@ -8,7 +8,7 @@
 	<!-- Roboto Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
-
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
@@ -58,7 +58,7 @@
 					<!-- login main form -->
 					<div class="col-md-6 col-sm-12 col-12 login-main-right">
 						
-						<form class="login-form reg-form">
+						<form id="test" class="login-form reg-form">
 							<div class="login-main-header">
 								<h3>Đăng Ký Tài Khoản Nhà Tuyển Dụng</h3>
 							</div>
@@ -118,7 +118,7 @@
 													});
 												});
 											</script>
-											<p class="output-file">
+											<p id="none" class="output-file">
 												<span id="previewFileName"></span>
 											</p>
 										</div>
@@ -129,7 +129,7 @@
 						    <a href="#" class="fg-login d-inline-block"></a>
 						    <a href="login-employees.html" class="fg-login float-right d-inline-block">Bạn đã có tài khoản? Đăng Nhập</a>
 						  </div>
-						  <button onclick="createBusiness()" type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký Nhà Tuyển Dụng</button>
+						  <button onclick="createBusiness()" data-dismiss="test" type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký Nhà Tuyển Dụng</button>
 						<div class="form-group d-block w-100 mt-5">
 							<div class="text-or text-center">
 								<span>Hoặc</span>

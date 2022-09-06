@@ -10,11 +10,12 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap"
           rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Font Awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -25,6 +26,7 @@
 
     <!-- main css -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/application.js"></script>
 </head>
 <body>
 <!-- main nav -->
@@ -177,13 +179,13 @@
                                             <label class="col-sm-3 col-form-label text-right label">Họ tên<span
                                                     style="color: red" class="pl-2">*</span></label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" placeholder="Nhập họ và tên">
+                                                <input id="fullName" type="text" class="form-control" placeholder="Nhập họ và tên">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label text-right label">Địa chỉ</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control">
+                                                <input id="address" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -191,14 +193,14 @@
                                                 thoại<span
                                                         style="color: red" class="pl-2">*</span></label>
                                             <div class="col-sm-9">
-                                                <input type="number" class="form-control">
+                                                <input id="telephone" type="number" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label text-right label">Email<span
                                                     style="color: red" class="pl-2">*</span></label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control"
+                                                <input id="email" type="text" class="form-control"
                                                        placeholder="Nhập email cá nhân">
                                             </div>
                                         </div>
@@ -241,7 +243,7 @@
                                                     });
                                                 });
                                             </script>
-                                            <p class="output-file">
+                                            <p id="test" class="output-file">
                                                 <span id="previewFileName"></span>
                                             </p>
                                         </div>
@@ -252,7 +254,7 @@
                     </div>
 
                     <div class="rec-submit">
-                        <button type="submit" class="btn-submit-recuitment mb-3 ml-3" name="">
+                        <button onclick="createApplication()" type="submit" class="btn-submit-recuitment mb-3 ml-3" name="">
                             <i class="fa fa-floppy-o pr-2"></i>Lưu Hồ Sơ
                         </button>
                     </div>
@@ -494,15 +496,6 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.4.1.slim.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/select2.min.js"></script>
-<script src="js/jobdata.js"></script>
-
-<script type="text/javascript" src="js/main.js"></script>
-<!-- Owl Stylesheets Javascript -->
-<script src="js/owlcarousel/owl.carousel.js"></script>
 <!-- Read More Plugin -->
 <script type="text/javascript">
     // Avatar upload and preview

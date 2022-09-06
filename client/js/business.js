@@ -24,14 +24,24 @@ function createBusiness() {
         processData: false,
         url: "http://localhost:8080/business",
         data: form,
-        success: showAlert
+        success: function (){
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Thành công :D',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            document.getElementById("username").value = ""
+            document.getElementById("password").value = ""
+            document.getElementById("telephone").value = ""
+            document.getElementById("nameCompany").value = ""
+            document.getElementById("descriptions").value = ""
+            document.getElementById("address").value = ""
+            document.getElementById("file").value = ""
+            document.getElementById("none").style.display = "none"
+        }
 
     })
     event.preventDefault()
 }
-
-
-function showAlert() {
-    alert("Đăng ký thành công")
-}
-

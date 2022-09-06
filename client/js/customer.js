@@ -22,12 +22,21 @@ function CreateCustomer() {
         type: "POST",
         url: "http://localhost:8080/customers",
         data: JSON.stringify(customer),
-        success: showAlert
+        success: function (){
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Thành công :D',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            document.getElementById("name").value = ""
+            document.getElementById("password").value = ""
+            document.getElementById("nameCustomer").value = ""
+            document.getElementById("telephone").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("address").value = ""
+        }
     })
     event.preventDefault()
 }
-
-function showAlert() {
-    alert("Đăng ký thành công")
-}
-

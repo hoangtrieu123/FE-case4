@@ -1,17 +1,23 @@
 function createPost() {
-    let name = $('#name').val()
-    let password = $('#password').val()
-    let nameCustomer = $('#nameCustomer').val()
-    let telephone = $('#telephone').val()
-    let email = $('#email').val()
+    let title = $('#title').val()
+    let salary = $('#salary').val()
+    let benefits = $('#benefits').val()
+    let description = $('#description').val()
+    let language = $('#language').val()
+    let skill = $('#skill').val()
     let address = $('#address').val()
     let customer = {
-        name: name,
-        password: password,
-        nameCustomer: nameCustomer,
-        telephone: telephone,
-        email: email,
-        address: address,
+        title: title,
+        salary: salary,
+        benefits: benefits,
+        description: description,
+        language: language,
+        skill: skill,
+        address : address,
+        // business: {
+        //     id:
+        // }
+
     }
 
     $.ajax({
@@ -22,7 +28,21 @@ function createPost() {
         type: "POST",
         url: "http://localhost:8080/customers",
         data: JSON.stringify(customer),
-        success: showAlert
+        success: function (){
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Thành công :D',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            document.getElementById("name").value = ""
+            document.getElementById("password").value = ""
+            document.getElementById("nameCustomer").value = ""
+            document.getElementById("telephone").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("address").value = ""
+        }
     })
     event.preventDefault()
 }
