@@ -14,7 +14,12 @@
 
 	<!-- main css -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+	<!-- Font Awesome -->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/select2.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="js/business.js"></script>
 </head>
 <body>
 <div class="container-fluid login-fluid clear-left clear-right">
@@ -62,20 +67,12 @@
 						</div>
 						  <div class="input-div one">
 		           		   <div class="div lg-lable">
-		           		   		<h5>Tên đăng nhập<span class="req">*</span></h5>
-		           		   		<input type="text" class="input form-control-lgin">
+		           		   		<input id="username" placeholder="Tên đăng nhập" type="text" class="input form-control-lgin">
 		           		   </div>
 		           		</div>
 		           		<div class="input-div one">
 		           		   <div class="div lg-lable">
-		           		    	<h5>Mật khẩu<span class="req">*</span></h5>
-		           		    	<input type="password" class="input form-control-lgin">
-		            	   </div>
-		            	</div>
-		            	<div class="input-div one">
-		           		   <div class="div lg-lable">
-		           		    	<h5>Nhập Lại Mật khẩu<span class="req">*</span></h5>
-		           		    	<input type="password" class="input form-control-lgin">
+		           		    	<input id="password" placeholder="password" type="password" class="input form-control-lgin">
 		            	   </div>
 		            	</div>
 		            	<div class="reg-info">
@@ -83,33 +80,56 @@
 						</div>
 		           		 <div class="input-div one">
 		           		   <div class="div lg-lable">
-		           		   		<h5>Số điện thoại liên hệ<span class="req">*</span></h5>
-		           		   		<input type="text" class="input form-control-lgin">
+		           		   		<input id="telephone" placeholder="Số điện thoại liên hệ *" type="text" class="input form-control-lgin">
 		           		   </div>
 		           		</div>
 		           		 <div class="input-div one">
 		           		   <div class="div lg-lable">
-		           		   		<h5>Tên công ty<span class="req">*</span></h5>
-		           		   		<input type="text" class="input form-control-lgin">
+		           		   		<input id="nameCompany" placeholder="Tên công ty" type="text" class="input form-control-lgin">
 		           		   </div>
 		           		</div>
 		           		 <div class="input-div one">
 		           		   <div class="div lg-lable">
-		           		   		<h5>Mô tả về công ty<span class="req">*</span></h5>
-		           		   		<input type="text" class="input form-control-lgin">
+							   <textarea id="descriptions" placeholder="Mô tả về công ty *" class="form-control"  rows="1"></textarea>
 		           		   </div>
 		           		</div>
 		           		<div class="input-div one">
 		           		   <div class="div lg-lable">
-		           		   		<h5>Địa chỉ công ty<span class="req">*</span></h5>
-		           		   		<input type="text" class="input form-control-lgin">
+		           		   		<input id="address" placeholder="Địa chỉ công ty" type="text" class="input form-control-lgin">
 		           		   </div>
 		           		</div>
+							<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+								 data-parent="#accordionExample">
+								<div class="card-body recuitment-body">
+									<div class="form-group row">
+										<label class="col-sm-3 col-form-label text-right label">Chọn hồ sơ đính kèm<span
+												style="color: red" class="pl-2">*</span></label>
+										<div class="col-sm-9">
+											<input type="file" id="file" class="recuitment-card-acttachment"/>
+											<label for="file" class="btn-1"><i class="fa fa-paperclip pr-2"></i>Chọn
+												file</label>
+											<!--                                             jQuery lấy tên file-->
+											<script>
+												$(document).ready(function () {
+													$('.recuitment-card-acttachment').change(function (e) {
+														var fileName = e.target.files[0].name;
+														document.getElementById("previewFileName").innerHTML = fileName;
+														$(".output-file").append('<style>.output-file:before{display:inline-block !important;}</style>');
+													});
+												});
+											</script>
+											<p class="output-file">
+												<span id="previewFileName"></span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						  <div class="form-group d-block frm-text">
 						    <a href="#" class="fg-login d-inline-block"></a>
 						    <a href="login-employees.html" class="fg-login float-right d-inline-block">Bạn đã có tài khoản? Đăng Nhập</a>
 						  </div>
-						  <button type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký Nhà Tuyển Dụng</button>
+						  <button onclick="createBusiness()" type="submit" class="btn btn-primary float-right btn-login d-block w-100">Đăng Ký Nhà Tuyển Dụng</button>
 						<div class="form-group d-block w-100 mt-5">
 							<div class="text-or text-center">
 								<span>Hoặc</span>
@@ -159,10 +179,5 @@
 	</footer>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.4.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
