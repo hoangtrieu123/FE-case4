@@ -1,3 +1,4 @@
+displayPost()
 function createPost() {
     let title = $('#title').val()
     let salary = $('#salary').val()
@@ -48,23 +49,23 @@ function displayPost() {
                 content += "<div class='job-content'>"
                 content += "<div class='job-logo'>"
                 content += "<a href='#'>"
-                content += "<img src='/../../static/"+data[i].business.imageUrl+"' class='job-logo-ima' alt='job-logo'>"
+                content += "<img src='../static/" + data[i].business.imageUrl + "' class='job-logo-ima' alt='job-logo'>"
                 content += "</a>"
                 content += "</div>"
                 content += "<div class='job-desc'>"
-                content += "<div class='job-title'>" +data[i].title+ "</div>"
+                content += "<div class='job-title'>" + data[i].title + "</div>"
                 content += " <div class='job-company'>"
                 content += "<a href='#'></a>" +
                     "<a href='#' class='job-address'>" +
-                    "<i class='fa fa-map-marker' aria-hidden='true'></i>"+data[i].address+"</a>"
+                    "<i class='fa fa-map-marker' aria-hidden='true'></i>" + data[i].address + "</a>"
                 content += " </div>"
                 content += " <div class='job-inf'>"
                 content += " <div class='job-main-skill'>"
-                content += " <i class='fa fa-code' aria-hidden='true'></i> <a href='#'> "+data[i].language+"</a>"
+                content += " <i class='fa fa-code' aria-hidden='true'></i> <a href='#'> " + data[i].language + "</a>"
                 content += " </div>"
                 content += " <div id='salary' class='job-salary'>"
                 content += " <i class='fa fa-money' aria-hidden='true'></i>"
-                content += " <span class='salary-max'>"+data[i].salary+"<em class='salary-unit'>triệu</em></span>"
+                content += " <span class='salary-max'>" + data[i].salary + "<em class='salary-unit'>triệu</em></span>"
                 content += " </div>"
                 content += "</div>"
                 content += "</div>"
@@ -75,6 +76,19 @@ function displayPost() {
                 content += "</div>"
             }
             document.getElementById("test").innerHTML = content
+        }
+    })
+}
+
+let searchName = document.getElementById("search")
+
+function search() {
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/posts/search?title=" + searchName.value,
+        success: function (data){
+            console.log(data)
+            displayPost(data)
         }
     })
 }
