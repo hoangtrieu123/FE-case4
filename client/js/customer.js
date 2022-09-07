@@ -28,7 +28,7 @@ function CreateCustomer() {
                 icon: 'success',
                 title: 'Thành công :D',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000
             })
             document.getElementById("name").value = ""
             document.getElementById("password").value = ""
@@ -36,7 +36,11 @@ function CreateCustomer() {
             document.getElementById("telephone").value = ""
             document.getElementById("email").value = ""
             document.getElementById("address").value = ""
+            setTimeout(function() {
+                window.location.href = "login.html";
+            }, 1500);
         }
     })
     event.preventDefault()
 }
+

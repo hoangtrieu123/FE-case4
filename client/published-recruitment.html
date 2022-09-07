@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>TechJobs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Roboto Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
           rel="stylesheet">
@@ -14,7 +14,7 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- Font Awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -25,6 +25,7 @@
 
     <!-- main css -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/post.js"></script>
 </head>
 <body>
 <!-- main nav -->
@@ -178,32 +179,32 @@
                                         <label class="col-sm-3 col-form-label text-right label">Tiêu đề<span
                                                 style="color: red" class="pl-2">*</span></label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Nhập tiêu đề">
+                                            <input id="title" type="text" class="form-control" placeholder="Nhập tiêu đề">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label text-right label">Lương</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Lương">
+                                            <input id="salary" type="text" class="form-control" placeholder="Lương">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label text-right label">Ngôn ngữ</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Ngôn ngữ lập trình">
+                                            <input id="language" type="text" class="form-control" placeholder="Ngôn ngữ lập trình">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label text-right label">Kỹ năng</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Kỹ năng yêu cầu">
+                                            <input id="skill" type="text" class="form-control" placeholder="Kỹ năng yêu cầu">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label text-right label">Lợi ích<span
                                                 style="color: red" class="pl-2">*</span></label>
                                         <div class="col-sm-9">
-                                            <textarea type="text" class="form-control"
+                                            <textarea id="benefits" type="text" class="form-control"
                                                       placeholder="Nhập mô tả công việc" rows="5"></textarea>
                                         </div>
                                     </div>
@@ -211,7 +212,7 @@
                                         <label class="col-sm-3 col-form-label text-right label">Yêu cầu công việc<span
                                                 style="color: red" class="pl-2">*</span></label>
                                         <div class="col-sm-9">
-                                            <textarea type="text" class="form-control"
+                                            <textarea id="description" type="text" class="form-control"
                                                       placeholder="Nhập yêu cầu công việc" rows="5"></textarea>
                                         </div>
                                         </div>
@@ -292,7 +293,7 @@
                             </div>
                         </div>
                         <div class="rec-submit">
-                            <button type="submit" class="btn-submit-recuitment" name="">
+                            <button onclick="createPost()" class="btn-submit-recuitment" name="">
                                 <i class="fa fa-floppy-o pr-2"></i>Lưu Tin
                             </button>
                         </div>
@@ -571,20 +572,20 @@
 <!-- (end) footer -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.4.1.slim.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/select2.min.js"></script>
-<script src="js/jobdata.js"></script>
+<!--&lt;!&ndash; Optional JavaScript &ndash;&gt;-->
+<!--&lt;!&ndash; jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;-->
+<!--<script src="js/jquery-3.4.1.slim.min.js"></script>-->
+<!--<script src="js/popper.min.js"></script>-->
+<!--<script src="js/bootstrap.min.js"></script>-->
+<!--<script src="js/select2.min.js"></script>-->
+<!--<script src="js/jobdata.js"></script>-->
 
-<script type="text/javascript" src="js/main.js"></script>
-<!-- Owl Stylesheets Javascript -->
-<script src="js/owlcarousel/owl.carousel.js"></script>
-<!-- Read More Plugin -->
+<!--<script type="text/javascript" src="js/main.js"></script>-->
+<!--&lt;!&ndash; Owl Stylesheets Javascript &ndash;&gt;-->
+<!--<script src="js/owlcarousel/owl.carousel.js"></script>-->
+<!--&lt;!&ndash; Read More Plugin &ndash;&gt;-->
 
 
 </body>

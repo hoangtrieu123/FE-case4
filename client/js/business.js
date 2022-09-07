@@ -30,7 +30,7 @@ function createBusiness() {
                 icon: 'success',
                 title: 'Thành công :D',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000
             })
             document.getElementById("username").value = ""
             document.getElementById("password").value = ""
@@ -40,8 +40,10 @@ function createBusiness() {
             document.getElementById("address").value = ""
             document.getElementById("file").value = ""
             document.getElementById("none").style.display = "none"
+            setTimeout(function() {
+                window.location.href = "login.html";
+            }, 1500);
         }
-
     })
     event.preventDefault()
 }
